@@ -104,8 +104,3 @@ mediana1 a b c
 mediana2 :: (Num a, Ord a) => a -> a -> a -> a
 mediana2 a b c = a + b + c - min3 a b c - max3 a b c
 
--- 1.16
-converte :: Int -> String
-converte n 
-            |
-            
