@@ -1,4 +1,4 @@
-import Data.ByteString (intersperse)
+import Outputable (dot)
 -- 2.1a
 myand :: [Bool] -> Bool
 myand [] = True
@@ -64,6 +64,11 @@ aprox1 n = sum [ ((-1) ** fromIntegral x) / (2 * fromIntegral x + 1) | x <- [0..
 aprox2 :: Int -> Double
 aprox2 n = sqrt ( sum [ ((-1) ** fromIntegral x) / (fromIntegral x + 1) ** 2 | x <- [0..n]] * 12)
 
+-- 2.8
+dotprod :: [Float] -> [Float] -> Float
+dotprod [] [] = 0
+dotprod a b = head a * head b + dotprod (tail a) (tail b)
+
 -- 2.9
 divprop :: Integer -> [Integer]
 divprop n = [x | x <- [1..n-1], n `mod` x == 0]
@@ -84,3 +89,4 @@ primo n = divprop n == [1]
 mersennes :: [(Int, Int)]
 mersennes = [ (x, 2^x-1) | x <-[1..30], primo (2^x - 1)]
 
+-- 2.14
