@@ -1,4 +1,5 @@
 import Outputable (dot)
+import Data.Char ()
 -- 2.1a
 myand :: [Bool] -> Bool
 myand [] = True
